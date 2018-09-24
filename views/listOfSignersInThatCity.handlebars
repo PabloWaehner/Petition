@@ -1,0 +1,19 @@
+
+<p>Thanks for signing the petition</p>
+
+
+
+
+
+
+<h3>All these people in {{ city }} support the cause!</h3>
+
+{{#listOfSigners}}
+
+    <p>{{ firstname }} &nbsp;&nbsp;   {{ lastname }} &nbsp;&nbsp;   {{ age }} &nbsp;&nbsp;    <a href="{{ homepage }}" target="_blank">{{ homepage }}</a></p>
+
+{{/listOfSigners}}
+<a class="logout" href="/logout">Log Out</a>
+<form action="/listOfSigners">
+    <input type="submit" value="Go Back" />
+</form>

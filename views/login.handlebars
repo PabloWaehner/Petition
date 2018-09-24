@@ -1,0 +1,17 @@
+
+
+<p>Please, sign the next petition so we can fight against climate change together!</p>
+<p>If we get enough signatures, the congress will pass a law to make solar panels in every home a must</p>
+<form method="post">
+    <div class="container">
+    <input type="email" name="email" placeholder="e-mail address" />
+    <input type="password" name="password" placeholder="password" />
+     <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <button class="button noTextDecoration" type="submit">Log In</button>
+    <div>
+        {{ error }}
+    </div>
+
+    <p>If you don't have an account yet, please <a href="signup"> Sign Up</a> here </p>
+</div>
+</form>

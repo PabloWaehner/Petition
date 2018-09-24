@@ -1,0 +1,23 @@
+        <p>Please, sign the petition so we can fight against climate change together!</p>
+        <p>If we get enough signatures, the congress will pass a law to make the use of solar panels in every home a must</p>
+    <form method="post">
+<div class="container">
+        <div><canvas id="canvas" width="500" height="100" style="border:1px solid blue"></canvas></div>
+        <input id="hidden-input" name="signature" type="hidden" value="" />
+        <p>Please sign here</p>
+         <input type="hidden" name="_csrf" value="{{csrfToken}}">
+<div>
+        <button class="button" type="submit">Submit</button>
+        <input class="button" type="button" value="Erase Signature" onclick="erase()" />
+        {{ error }}
+    </div>
+
+    </div>
+</form>
+
+<a class="logout" href="/logout">Log Out</a>
+
+
+
+<script src="/script.js" charset="utf-8"></script>
+<!-- aca tendria que meter algo para que se puedan ver todos los nombres? -->

@@ -1,0 +1,24 @@
+
+<p>Thanks for signing the petition</p>
+
+<div class="signature">
+<img src="{{id}}" >
+</div>
+
+
+
+<form action="/listOfSigners">
+    <input type="submit" value="See all signers" />
+</form>
+<!-- <div><a href="/profile/edit">Edit your profile</a></div> -->
+<form action="/profile/edit">
+    <input type="submit" value="Edit your profile" />
+</form>
+
+<form method="post" action="/delete-signature">
+<button class="button">Change your signature</button>
+<input type="hidden" name="_csrf" value="{{csrfToken}}">
+</form>
+
+
+<a class="logout" href="/logout">Log Out</a>

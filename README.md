@@ -8,4 +8,5 @@ Technologies used: Javascript | jQuery | Handlebars | Node.js | Express | Postgr
 
 Can be viewed here on heroku: https://pablowaehnersocialnetwork.herokuapp.com/welcome
 
-<a href="https://gyazo.com/ef58cc961474daea0ee32b66a2b0f6eb"><img src="https://i.gyazo.com/ef58cc961474daea0ee32b66a2b0f6eb.gif" alt="Image from Gyazo" width="960"/></a>
+
+<a href="https://gyazo.com/ef58cc961474daea0ee32b66a2b0f6eb"><video alt="Video from Gyazo" width="960" autoplay muted loop playsinline><source src="https://i.gyazo.com/ef58cc961474daea0ee32b66a2b0f6eb.mp4" type="video/mp4" /></video></a>

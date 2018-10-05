@@ -8,4 +8,3 @@ Technologies used: Javascript | jQuery | Handlebars | Node.js | Express | Postgr
 
 Can be viewed here on heroku: https://pablowaehnersocialnetwork.herokuapp.com/welcome
 
-

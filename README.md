@@ -6,5 +6,5 @@ If you agree with the cause, you can sign up, put an electronic signature, and s
 
 Technologies used: Javascript | jQuery | Handlebars | Node.js | Express | PostgreSQL | HTML/CSS.
 
-Can be viewed here on heroku: https://pablowaehnersocialnetwork.herokuapp.com/welcome
+Can be viewed here on heroku: https://pablowaehnerpetition.herokuapp.com/
 

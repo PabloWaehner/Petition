@@ -1,17 +1,11 @@
-
 <p>Thanks for signing the petition</p>
-
-
-
-
-
-
 <h3>All these people support the cause!</h3>
-<h4>If you want to see all the people in your area, just click on the name of the city to see all the supporters there!</h4>
+<h4>If you want to see all the people in your area, just click on the name of the city to see all the supporters there!
+</h4>
 {{#listOfSigners}}
-
-    <p>{{ firstname }} &nbsp;&nbsp; {{ lastname }} &nbsp;&nbsp;   {{ age }}  &nbsp;&nbsp;  <a class="noTextDecoration" href="/listOfSigners/{{ city }}">{{ city }}</a> &nbsp;&nbsp;   <a class="noTextDecoration" href="{{ homepage }}" target="_blank"></a></p>
-
+<p>{{ firstname }} &nbsp;&nbsp; {{ lastname }} &nbsp;&nbsp; {{ age }} &nbsp;&nbsp; <a class="noTextDecoration"
+        href="/listOfSigners/{{ city }}">{{ city }}</a> &nbsp;&nbsp; <a class="noTextDecoration" href="{{ homepage }}"
+        target="_blank"></a></p>
 {{/listOfSigners}}
 <a class="logout" href="/logout">Log Out</a>
 <form action="/thanks">

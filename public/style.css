@@ -1,11 +1,8 @@
 .background {
     position: absolute;
     background-attachment: fixed;
-    background-image: linear-gradient(
-            rgba(255, 255, 255, 0.6),
-            rgba(255, 255, 255, 0.6)
-        ),
-        /*this is to give opacity to the image only */ url(Earth-in-hands.jpg);
+    background-image: linear-gradient( rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), /*this is to give opacity to the image only */
+    url(Earth-in-hands.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     top: 0;
@@ -55,6 +52,7 @@ input {
 }
 
 /* mouse over link */
+
 a:hover {
     text-decoration: underline;
 }

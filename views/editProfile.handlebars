@@ -1,28 +1,26 @@
+<h3>Edit your Profile</h3>
 
-        <h3>Edit your Profile</h3>
-    <form class="container" method="post">
-
-        <input type="text" name="first_name" value="{{ firstname }}" />
-        First Name
-        <input type="text" name="last_name" value="{{ lastname }}" />
-        Last Name
-        <input type="email" name="email" value="{{ email }}" />
-        E-mail Address
-        <input type="password" name="hashed_password" value="{{ password}}" />
-        Password
-        <input type="text" name="age" value="{{ age }}" />
-        Age
-        <input type="text" name="city" value="{{ city }}" />
-        City
-        <input type="text" name="homepage" value="{{ url }}" />
-        Homepage
-
-         <input type="hidden" name="_csrf" value="{{csrfToken}}">
-
-         <button style="margin:10px" type="submit">Update</button>
-
+<form class="container" method="post">
+    <input type="text" name="first_name" value="{{ firstname }}" />
+    First Name
+    <input type="text" name="last_name" value="{{ lastname }}" />
+    Last Name
+    <input type="email" name="email" value="{{ email }}" />
+    E-mail Address
+    <input type="password" name="hashed_password" value="{{ password}}" />
+    Password
+    <input type="text" name="age" value="{{ age }}" />
+    Age
+    <input type="text" name="city" value="{{ city }}" />
+    City
+    <input type="text" name="homepage" value="{{ url }}" />
+    Homepage
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <button style="margin:10px" type="submit">Update</button>
 </form>
+
 <form action="/thanks">
     <input type="submit" value="Go Back" />
 </form>
+
 <a class="logout" href="/logout">Log Out</a>

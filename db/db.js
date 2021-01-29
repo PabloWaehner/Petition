@@ -10,14 +10,14 @@ if (process.env.DATABASE_URL) {
     );
 }
 
-exports.getSigners = function() {
+exports.getSigners = function () {
     return db.query("SELECT * FROM signatures;").then(results => {
         // console.log(results.rows);
         return results.rows;
     });
 };
 
-exports.insertUser = function(signature, signatureId) {
+exports.insertUser = function (signature, signatureId) {
     const q = `INSERT INTO signatures (signature, user_id)
     VALUES($1, $2)
     RETURNING *`;
@@ -30,7 +30,7 @@ exports.insertUser = function(signature, signatureId) {
         });
 };
 
-exports.getSignature = function(signatureId) {
+exports.getSignature = function (signatureId) {
     const q = `SELECT signature FROM signatures WHERE id = $1;`;
     const params = [signatureId];
     return db.query(q, params).then(results => {
@@ -38,7 +38,7 @@ exports.getSignature = function(signatureId) {
         return results.rows[0].signature;
     });
 };
-exports.getSignatureId = function(userID) {
+exports.getSignatureId = function (userID) {
     const q = `SELECT id FROM signatures WHERE user_id = $1;`;
     const params = [userID];
     return db.query(q, params).then(results => {
@@ -47,13 +47,13 @@ exports.getSignatureId = function(userID) {
     });
 };
 
-exports.getUsers = function() {
+exports.getUsers = function () {
     return db.query("SELECT * FROM users;").then(results => {
         // console.log("getUsers: ", results.rows);
         return results.rows;
     });
 };
-exports.getInfo = function() {
+exports.getInfo = function () {
     const q = `SELECT users.first_name AS firstName, users.last_name AS lastName, profiles.age AS age, profiles.city AS city, profiles.url AS homepage
         FROM users
         LEFT OUTER JOIN profiles
@@ -63,7 +63,7 @@ exports.getInfo = function() {
         return results.rows;
     });
 };
-exports.getInfoWithCity = function(city) {
+exports.getInfoWithCity = function (city) {
     const q = `SELECT users.first_name AS firstName, users.last_name AS lastName, profiles.age AS age, profiles.city AS city, profiles.url AS homepage
         FROM users
         LEFT OUTER JOIN profiles
@@ -76,7 +76,7 @@ exports.getInfoWithCity = function(city) {
     });
 };
 
-exports.signUp = function(firstName, lastName, email, password) {
+exports.signUp = function (firstName, lastName, email, password) {
     const q = `INSERT INTO users (first_name, last_name, email, hashed_password )
     VALUES($1, $2, $3, $4)
     RETURNING *`;
@@ -87,14 +87,14 @@ exports.signUp = function(firstName, lastName, email, password) {
     });
 };
 
-exports.getProfile = function() {
+exports.getProfile = function () {
     return db.query("SELECT * FROM profiles;").then(results => {
         // console.log(results.rows);
         return results.rows;
     });
 };
 
-exports.insertProfile = function(age, city, url, user_id) {
+exports.insertProfile = function (age, city, url, user_id) {
     const q = `INSERT INTO profiles (age, city, url, user_id)
     VALUES($1, $2, $3, $4)
     RETURNING *`;
@@ -105,7 +105,7 @@ exports.insertProfile = function(age, city, url, user_id) {
     });
 };
 ///////////////////////////////////////////////
-exports.getInfoAndEmail = function(userId) {
+exports.getInfoAndEmail = function (userId) {
     const q = `SELECT users.first_name AS firstName, users.last_name AS lastName, users.email, users.hashed_password, profiles.age AS age, profiles.city AS city, profiles.url AS homepage
         FROM users
         LEFT OUTER JOIN profiles
@@ -117,7 +117,7 @@ exports.getInfoAndEmail = function(userId) {
         return results.rows[0];
     });
 };
-exports.updateProfile = function(age, city, homepage, user_id) {
+exports.updateProfile = function (age, city, homepage, user_id) {
     const q = `INSERT INTO profiles (age, city, url, user_id)
     VALUES ($1, $2, $3, $4)
     ON CONFLICT(user_id)
@@ -129,7 +129,7 @@ exports.updateProfile = function(age, city, homepage, user_id) {
     });
 };
 
-exports.updateMoreStuff = function(user_id, firstname, lastname, email) {
+exports.updateMoreStuff = function (user_id, firstname, lastname, email) {
     const q = `UPDATE users SET first_name=$2, last_name=$3, email=$4
     WHERE id=$1
     RETURNING *`;
@@ -138,7 +138,7 @@ exports.updateMoreStuff = function(user_id, firstname, lastname, email) {
         return results.rows[0];
     });
 };
-exports.updateProfileAndPassword = function(
+exports.updateProfileAndPassword = function (
     user_id,
     firstname,
     lastname,
@@ -156,7 +156,7 @@ exports.updateProfileAndPassword = function(
         return results.rows[0];
     });
 };
-exports.deleteSignature = function(userId) {
+exports.deleteSignature = function (userId) {
     const q = `DELETE FROM signatures WHERE user_id = $1`;
 
     const params = [userId];
@@ -166,13 +166,13 @@ exports.deleteSignature = function(userId) {
     });
 };
 
-exports.hashPassword = function(plainTextPassword) {
-    return new Promise(function(resolve, reject) {
-        bcrypt.genSalt(function(err, salt) {
+exports.hashPassword = function (plainTextPassword) {
+    return new Promise(function (resolve, reject) {
+        bcrypt.genSalt(function (err, salt) {
             if (err) {
                 return reject(err);
             }
-            bcrypt.hash(plainTextPassword, salt, function(err, hash) {
+            bcrypt.hash(plainTextPassword, salt, function (err, hash) {
                 if (err) {
                     return reject(err);
                 }
@@ -182,15 +182,15 @@ exports.hashPassword = function(plainTextPassword) {
     });
 };
 
-exports.checkPassword = function(
+exports.checkPassword = function (
     textEnteredInLoginForm,
     hashedPasswordFromDatabase
 ) {
-    return new Promise(function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
         bcrypt.compare(
             textEnteredInLoginForm,
             hashedPasswordFromDatabase,
-            function(err, doesMatch) {
+            function (err, doesMatch) {
                 if (err) {
                     reject(err);
                 } else {

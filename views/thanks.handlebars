@@ -1,11 +1,8 @@
-
 <p>Thanks for signing the petition</p>
 
 <div class="signature">
-<img src="{{id}}" >
+    <img src="{{id}}">
 </div>
-
-
 
 <form action="/listOfSigners">
     <input type="submit" value="See all signers" />
@@ -16,8 +13,8 @@
 </form>
 
 <form method="post" action="/delete-signature">
-<button class="button">Change your signature</button>
-<input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <button class="button">Change your signature</button>
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
 </form>
 
 

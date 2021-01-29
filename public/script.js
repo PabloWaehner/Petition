@@ -18,13 +18,13 @@ function init() {
     w = canvas.width;
     h = canvas.height;
 
-    canvas.addEventListener("mousemove", function(e) {
+    canvas.addEventListener("mousemove", function (e) {
         findxy("move", e);
     });
-    canvas.addEventListener("mousedown", function(e) {
+    canvas.addEventListener("mousedown", function (e) {
         console.log("string");
         findxy("down", e);
-        canvas.addEventListener("mouseup", function(e) {
+        canvas.addEventListener("mouseup", function (e) {
             //I PUT THE MOUSEUP INSIDE OF THE MOUSEDOWN, SO THAT IT WOULD ONLY REGISTER THE SIGNATURE IF THE USER DOES MOUSEDOWN AND MOUSEUP INSIDE OF THE CANVAS. OTHERWISE, THE WAY I HAD IT BEFORE, MOUSINGDOWN OUTSIDE OF THE CANVAS, AND THEN UP INSIDE OF IT, WOULD REGISTER A SIGNATURE (BLANK)
             findxy("up", e);
             var canvas = document.getElementById("canvas"); //this has to be here, otherwise I won't get the image
@@ -33,7 +33,7 @@ function init() {
             // console.log(dataURL);
         });
     });
-    canvas.addEventListener("mouseout", function(e) {
+    canvas.addEventListener("mouseout", function (e) {
         findxy("out", e);
     });
 }

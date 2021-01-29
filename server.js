@@ -20,7 +20,7 @@ app.use(
 );
 //Cross-Site Request Forgery
 app.use(csurf());
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.locals.csrfToken = req.csrfToken();
   next();
 });

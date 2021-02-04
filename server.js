@@ -384,6 +384,10 @@ app.post("/delete-signature", (req, res) => {
   });
 });
 
+app.get('*', function(req, res){
+  res.redirect("/");
+});
+
 app.listen(process.env.PORT || 8080, () =>
   //proces.env.PORT was added so we can upload to heroku
   ca.rainbow("listening on port 8080")
